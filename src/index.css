@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: "Manrope Variable", sans-serif;
+  --color-primary: #01f0d0;
+  --color-secondary: #707070;
+  --color-accent-light: #d8fcf7;
+  --color-success: #0bd984;
+  --color-border: #ededed;
+  --color-bg: #f6f6f6;
+}
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #f6f6f6;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #6b6375;
+    --text-h: #08060d;
+    --bg: rgb(246, 246, 246);
+    --border: #e5e4e7;
+    --code-bg: #f4f3ec;
+    --accent: #aa3bff;
+    --accent-bg: rgba(170, 59, 255, 0.1);
+    --accent-border: rgba(170, 59, 255, 0.5);
+    --social-bg: rgba(244, 243, 236, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  }
+  @layer components {
+    .card-title {
+      @apply text-2xl font-extrabold leading-[33px] text-[#072635];
+    }
+
+    .inner-card-title {
+      @apply text-[18px] font-bold leading-6 text-[#072635];
+    }
+
+    .body-bold {
+      @apply text-[14px] font-bold text-[#072635];
+    }
+
+    .body-secondary {
+      @apply text-[14px] text-[#707070];
+    }
+    .body-md {
+      @apply text-[16px] font-medium text-[#072635];
+    }
+    .body-regular {
+      @apply text-[14px] text-[#072635];
+    }
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 4px;
+  padding-top: 4px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
